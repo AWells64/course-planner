@@ -6,10 +6,25 @@ const Initial = {
   },
   courses: {
     1: {
-      id: "1", title: "React for beginners", description: "An introduction to react", complete: false, price: "0", rating: 10, difficulty: "Intermediate", score: 10
+      id: "1", 
+      title: "React JS Course for Beginners", 
+      description: "An introduction to react. This course is awesome because you will learn ReactJS on hands on.", 
+      complete: false, 
+      price: "9.99", 
+      rating: 10, 
+      difficulty: "Beginners",
+      urlLink: "https://www.udemy.com/perfect-react-js-course/",  
+      score: 10,
     },
     2: {
-      id: "2", title: "Redux for beginners", description: "An introduction to redux", complete: false, price: "0", rating: 10, difficulty: "Difficult", score: 10
+      id: "2", 
+      title: "Redux for beginners", 
+      description: "An introduction to redux", 
+      complete: false, 
+      price: "0", 
+      rating: 10, 
+      difficulty: "Difficult", 
+      score: 10,
     }
   }
 };
