@@ -1,1 +1,1 @@
-# course-planner
+# course-planner-frontend
