@@ -6,17 +6,16 @@ class Courses extends Component {
     const { courses } = this.props;
     return (
       <Fragment>
-        <h1>Dev Course Planner</h1>
+        <h1 class="page-header text-center">Dev Course Planner</h1>
         {Object.values(courses).length ? (
           <ul className="list-group">
             {Object.values(courses).map((course, i) => (
-              <li className="list-group-item" id={course.id} key={i}>
+              <li className="list-group-item row" id={course.id} key={i}>
                 {/* <Link to={"/courses/" + course.id}>{course.title}</Link> */}
-                <p>Title: {course.title}</p>
-                <p>Description: {course.description}</p>
-                <p>Price: {course.price}</p>
-                <p>Rating: {course.rating}</p>
-                <p>Difficulty: {course.difficulty}</p>
+                <p className="col-xs-3"><strong>Title:</strong> {course.title}</p>
+                <p className="col-xs-5"><strong>Description:</strong> {course.description}</p>
+                <button className="col-xs-1">View detail</button>
+                <button className="col-xs-1 pull-right"><strong>+</strong> Add to list</button>
               </li>
             ))}
           </ul>
