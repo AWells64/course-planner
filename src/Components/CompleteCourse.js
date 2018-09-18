@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-const CompleteCourse = ({onClick, id, complete }) => {
+const CompleteCourse = ({onClick, id, complete}) => {
 
 	const buttonStyle = {
 		 

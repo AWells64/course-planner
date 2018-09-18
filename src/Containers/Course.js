@@ -1,18 +1,23 @@
 import { connect } from "react-redux";
 import Courses from "../Components/Course"; 
 import { deleteCourse } from "../Data/Actions";  
+import { completeCourse } from "../Data/Actions"; 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, {id}) => {
+	const coursesArr = Object.values(state.courses);
 	return {
-		courses: Object.values(state.courses),
+		courses: coursesArr,
+		completed: coursesArr.find(course => course.id === id).complete,
 	}
+
 }; 
 
 const mapDispatchToProps = dispatch => {
 	return {
-		deleteCourse: ( id ) => dispatch(deleteCourse(id))
-	}
-};
+		deleteCourse: ( id ) => dispatch(deleteCourse(id)), 
+		completeCourse: ( id ) => dispatch(completeCourse(id))
+	};
+}
 
 
 
