@@ -19,6 +19,7 @@ const registerBackground = {
 	alignItems: "center",
 	justifyContent: "center",
 	padding: 50,
+	margin: "0 auto 0 auto"
 };
 
 const inputSize = {
