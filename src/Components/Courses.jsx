@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
+import Login from "./Forms/Login";
+import Register from "./Forms/Register";
 
 class Courses extends Component {
   render() {
     const { courses } = this.props;
     return (
       <Fragment>
+      <Register />
+      <Login />
         <h1 class="page-header text-center">Dev Course Planner</h1>
         {Object.values(courses).length ? (
           <ul className="list-group">
