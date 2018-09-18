@@ -2,7 +2,7 @@ import React from "react";
 
 const DeleteCourse = ({ onClick, id }) => {
 
-  return <button className="col-xs-1 pull-right" 
+  return <button className="btn btn-danger" 
             onClick={() => onClick(id)} 
             ><strong>Delete</strong> 
           </button>;
