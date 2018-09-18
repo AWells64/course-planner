@@ -3,7 +3,7 @@ import Register from '../Components/Forms/Register';
 import { registerUser } from '../Data/actions/api'; 
 
 const mapDispatchToProps = dispatch => {
-	return{
+	return {
         registerUser: (data) => dispatch(registerUser(data))
 	};
 };

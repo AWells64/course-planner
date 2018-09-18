@@ -18,3 +18,9 @@ export const deleteCourse = id => {
       id: id
     };
   };
+
+  export const loggedIn = () => {
+      return {
+          type: "logIn",
+      }
+  }
