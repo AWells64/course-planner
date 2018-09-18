@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import UserCourses from "../Components/UserCourses"; 
-import { deleteCourse } from "../Data/Actions";  
-import { completeCourse } from "../Data/Actions"; 
+import { deleteCourse } from "../Data/actions/state";  
+import { completeCourse } from "../Data/actions/state"; 
 
 const mapStateToProps = (state) => {
 	return {
