@@ -6,19 +6,21 @@ import Courses from "./Containers/Courses";
 import UserCourses from "./Containers/UserCourses";
 import Login from "./Components/Forms/Login";
 import Register from "./Components/Forms/Register";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Fragment>
-          <h1 className="page-header text-center">Dev Course Planner</h1>
-          <Register />
-          <Login />
-          <Courses />
-          <UserCourses />
-        </Fragment>
-      </Provider>
+      <Router>
+        <Provider store={store}>
+          <Fragment>
+            <Route exact path="/" component={ Login } />
+            <Route exact path="/register" component={ Register } />
+            <Route exact path="/courses" component={ Courses } />
+            <Route exact path="/course" component={ Course } />
+          </Fragment>
+        </Provider>
+      </Router>
     );
   }
 }
