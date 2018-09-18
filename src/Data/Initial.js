@@ -8,7 +8,7 @@ const Initial = {
     1: {
       id: "1", 
       title: "React JS Course for Beginners", 
-      description: "An introduction to react. This course is awesome because you will learn ReactJS on hands on.", 
+      description: "An introduction to react. This course is awesome because you will learn ReactJS hands on.", 
       complete: false, 
       price: "9.99", 
       rating: 10, 

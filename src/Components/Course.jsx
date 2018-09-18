@@ -1,14 +1,15 @@
 import React, { Component, Fragment } from 'react'; 
 import DeleteCourse from './DeleteCourse';
+import CompleteCourse from './CompleteCourse'; 
 
 class Course extends Component {
 
   render() {
-    const { courses, deleteCourse } = this.props;
+    const { courses, deleteCourse, completeCourse } = this.props;
 
       return(
 		<Fragment>
-		  <h1>Your Courses Here</h1> 
+		  <h1>Course List</h1> 
 			{Object.values(courses).length ? (
 			  <ul className="list-group">
 		        {Object.values(courses).map((course, i) => (
@@ -19,7 +20,9 @@ class Course extends Component {
                     <p>Rating: {course.rating}</p>
                     <p>Difficulty: {course.difficulty}</p>
                     <p>Link to course provider: {course.urlLink}</p>
-                    <DeleteCourse onClick={deleteCourse} id={course.id} />  
+                    <DeleteCourse onClick={deleteCourse} id={course.id} />
+                    <CompleteCourse oncClick={completeCourse} id={course.id} /> 
+
                   </li>
                 ))}
               </ul>
