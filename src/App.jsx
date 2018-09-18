@@ -6,7 +6,7 @@ import Courses from "./Containers/Courses";
 import Course from "./Containers/Course";
 import UserCourses from "./Containers/UserCourses";
 import Login from "./Components/Forms/Login";
-import Register from "./Components/Forms/Register";
+import Register from "./Containers/Register";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {

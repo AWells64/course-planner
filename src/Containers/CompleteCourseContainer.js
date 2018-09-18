@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'; 
 import Course from '../Components/Course'; 
-import completeCourse from '../Data/Actions'; 
+import completeCourse from '../Data/actions/state'; 
 
 
 

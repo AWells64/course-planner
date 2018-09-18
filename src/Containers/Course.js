@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 import Courses from "../Components/Course"; 
-import { deleteCourse } from "../Data/Actions";  
-import { completeCourse } from "../Data/Actions"; 
+import { deleteCourse } from '../Data/actions/state';  
+import { completeCourse } from "../Data/actions/state"; 
+
 
 const mapStateToProps = (state, {id}) => {
 	const coursesArr = Object.values(state.courses);
