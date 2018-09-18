@@ -61,6 +61,18 @@ class Register extends Component {
 	onSubmit(e) {
 		e.preventDefault();
 
+		let newUserData = {
+			name: "name",
+			email: this.state.fields[0].value,
+			password: this.state.fields[0].value,
+		};
+
+		this.props.registerUser(newUserData);
+
+		this.setState({
+			email: "",
+			password: "",
+		})
 	}
 	
 	render() {
@@ -82,7 +94,7 @@ class Register extends Component {
 
 					<input type="submit" style={submitButton} className="btn btn-danger" value="Sign in"  />
 				</form>
-				</div>
+			</div>
 			</Fragment>
 		)
 	}

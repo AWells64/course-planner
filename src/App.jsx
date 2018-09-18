@@ -5,7 +5,7 @@ import store from "./Data/store";
 import Courses from "./Containers/Courses";
 import Course from "./Containers/Course";
 import Login from "./Components/Forms/Login";
-import Register from "./Components/Forms/Register";
+import Register from "./Containers/Register";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
