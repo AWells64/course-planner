@@ -1,5 +1,41 @@
 import React, { Component, Fragment } from "react";
 
+const headerText = {
+    color: "white",
+    marginBottom: 40,
+    textAlign: "center",
+    fontFamily: 'Bitter',
+};
+
+const labelText = {
+    color: "white",
+    marginTop: 20,
+    fontFamily: 'Bitter',
+};
+
+const registerBackground = {
+	backgroundColor: "black",
+	width: 500,
+	alignItems: "center",
+	justifyContent: "center",
+	padding: 50,
+};
+
+const inputSize = {
+	width: 400,
+};
+
+const submitButton = {
+	width: 400,
+	marginTop: 50,
+	fontFamily: 'Bitter',
+};
+
+const inputSpacing = {
+	display: "block",
+	marginVertical: 10,
+}
+
 class Login extends Component {
 	constructor(props) {
 		super(props);
@@ -30,12 +66,13 @@ class Login extends Component {
 	render() {
 		return (
 			<Fragment>
-				<h2>Login here:</h2>
+			<div style={registerBackground}>
+				<h2 style={headerText}>Sign In</h2>
 				<form onSubmit={(e) => this.onSubmit(e)}>
 					{this.state.fields.map((field, i) => (
-						<div key={i}>
-							<label>{field.name}</label>
-							<input 
+						<div style={inputSpacing} key={i}>
+							<label style={labelText}>{field.name}</label>
+							<input style={inputSize}
 								type="text" 
 								value={field.value} 
 								onChange={(e) => this.onChange(e, i)
@@ -43,8 +80,9 @@ class Login extends Component {
 						</div>
 					))}
 
-					<input type="submit" />
+					<input type="submit" style={submitButton} className="btn btn-danger" value="Sign in" />
 				</form>
+				</div>
 			</Fragment>
 		)
 	}
