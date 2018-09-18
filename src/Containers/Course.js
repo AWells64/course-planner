@@ -6,6 +6,7 @@ import { completeCourse } from "../Data/Actions";
 const mapStateToProps = (state, {id}) => {
 	const coursesArr = Object.values(state.courses);
 	return {
+		course: coursesArr.find(course => course.id === id),
 		courses: coursesArr,
 		completed: coursesArr.find(course => course.id === id).complete,
 	}

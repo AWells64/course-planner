@@ -16,7 +16,7 @@ class Course extends Component {
 	        <p>Difficulty: {course.difficulty}</p>
 	        <p>Link to course provider: {course.urlLink}</p>
 	        <DeleteCourse onClick={deleteCourse} id={course.id} />
-	        <CompleteCourse onClick={completeCourse} id={course.id} /> 
+	        <CompleteCourse onClick={completeCourse} id={course.id} complete={course.complete} /> 
       	</li>		
         );
 	}
