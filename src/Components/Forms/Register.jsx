@@ -1,5 +1,20 @@
 import React, { Component, Fragment } from "react";
 
+const mainHeader = {
+	fontFamily: 'Bitter',
+	textAlign: "center",
+	backgroundColor: "black",
+	color: "red",
+	borderRadius: 5,
+};
+
+const hrStyle = {
+    border: 0,
+    height: 0, /* Firefox... */
+    boxShadow: "0 0 10px 1px black",
+    width: '99%',
+};
+
 const headerText = {
     color: "white",
     marginBottom: 40,
@@ -19,6 +34,8 @@ const registerBackground = {
 	alignItems: "center",
 	justifyContent: "center",
 	padding: 50,
+	margin: "0 auto 0 auto",
+	marginBottom: 40,
 };
 
 const inputSize = {
@@ -78,6 +95,8 @@ class Register extends Component {
 	render() {
 		return (
 			<Fragment>
+			<h2 style={mainHeader}>Dev Course Planner</h2>
+			<hr style={hrStyle} />
 			<div style={registerBackground}>
 				<h2 style={headerText}>Register for an account</h2>
 				<form onSubmit={(e) => this.onSubmit(e)}>
