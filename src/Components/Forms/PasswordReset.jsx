@@ -1,15 +1,14 @@
 import React, { Component, Fragment } from "react";
 
-class Login extends Component {
-
+class PasswordReset extends Component {
   constructor(props) {
     super(props);
     this.state = {
       fields: [
         // {name: "id", value: ""},
-        // {name: "Name", value: ""},
-        { name: "Email:", value: "" },
-        { name: "Password:", value: "" }
+        { name: "Email:", value: ""},
+        { name: "Password:", value: "" },
+        { name: "Confirm Password:", value: "" }
       ]
     };
     this.onChange = this.onChange.bind(this);
@@ -25,12 +24,13 @@ class Login extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    let userData = {
+    let newUserData = {
+      name: "name",
       email: this.state.fields[0].value,
       password: this.state.fields[0].value
     };
 
-    this.props.loginUser(userData);
+    this.props.registerUser(newUserData);
 
     this.setState({
       email: "",
@@ -39,50 +39,42 @@ class Login extends Component {
   }
 
   render() {
-    const { loggedIn } = this.props;
     return (
       <Fragment>
         <h2 style={mainHeader}>Dev Course Planner</h2>
         <hr style={hrStyle} />
-        { !loggedIn ?
-          <div style={registerBackground}>
-            <h2 style={headerText}>Sign In</h2>
-            <form onSubmit={e => this.onSubmit(e)}>
-              {this.state.fields.map((field, i) => (
-                <div style={inputSpacing} key={i}>
-                  <label style={labelText}>{field.name}</label>
-                  <input
-                    style={inputSize}
-                    type="text"
-                    value={field.value}
-                    onChange={e => this.onChange(e, i)}
-                  />
-                </div>
-              ))}
+        <div style={registerBackground}>
+          <h2 style={headerText}>Enter your new password here</h2>
+          <form onSubmit={e => this.onSubmit(e)}>
+            {this.state.fields.map((field, i) => (
+              <div style={inputSpacing} key={i}>
+                <label style={labelText}>{field.name}</label>
+                <input
+                  style={inputSize}
+                  type="text"
+                  value={field.value}
+                  onChange={e => this.onChange(e, i)}
+                />
+              </div>
+            ))}
 
-              <input
-                type="submit"
-                style={submitButton}
-                className="btn btn-danger"
-                value="Sign in"
-              />
-            </form>
-            <p style={register}>
-              Have you forgotten your password again!? Ok click here to <a href="./courses/user">reset</a>
-            </p>
-            <p style={register}>
-              Don't have an account yet? <a href="./register">Register here.</a>
-            </p>
-          </div>
-          : <p>You're already logged in bro, don't see your course? <a href="./courses/user">Click here</a></p>
-        }
+            <input
+              type="submit"
+              style={submitButton}
+              className="btn btn-danger"
+              value="Register"
+            />
+          </form>
+          <p style={login}>
+            Already have an account? <a href="../">Log in here.</a>
+          </p>
+        </div>
       </Fragment>
     );
   }
 }
 
 const mainHeader = {
-
 	fontFamily: 'Bitter',
 	textAlign: "center",
 	backgroundColor: "#181819",
@@ -97,7 +89,8 @@ const hrStyle = {
     height: 0, /* Firefox... */
     //boxShadow: "0 0 10px 1px black",
     width: '99%',
-}; 
+
+};
 
 const headerText = {
   color: "white",
@@ -120,8 +113,9 @@ const registerBackground = {
 	padding: 50,
 	margin: "0 auto 0 auto",
 	marginBottom: 40,
-	boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.75)',
+	boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.75)', 
 }; 
+
 
 const inputSize = {
   width: 400
@@ -142,10 +136,10 @@ const font = {
   fontFamily: "Bitter"
 };
 
-const register = {
+const login = {
   fontFamily: "Bitter",
   paddingTop: 30,
   textAlign: "center"
 };
 
-export default Login;
+export default PasswordReset;

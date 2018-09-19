@@ -3,7 +3,7 @@ import Login from '../Components/Forms/Login';
 import { loginUser } from '../Data/actions/api'; 
 
 const mapStateToProps = (state, { id }) => ({
-    loggedin: state.loggedin,
+    loggedIn: state.loggedIn,
 }); 
 
 const mapDispatchToProps = dispatch => {
