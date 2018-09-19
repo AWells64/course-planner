@@ -7,6 +7,7 @@ import Course from "./Containers/Course";
 import UserCourses from "./Containers/UserCourses";
 import Login from "./Containers/Login";
 import Register from "./Containers/Register";
+import PasswordReset from "./Components/Forms/PasswordReset";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           <Fragment>
             <Route exact path="/" component={ Login } />
             <Route exact path="/register" component={ Register } />
+            <Route exact path="/reset" component={ PasswordReset } />
             <Route exact path="/courses" component={ Courses } />
             <Route exact path="/courses/user" component={ UserCourses } />
             <Route exact path="/courses/:id" render={ ({ match }) => (
