@@ -1,5 +1,5 @@
 import axios from '../../axios';
-import { loggedIn, setUserCourses, setCourses } from './state';
+import { loggedIn, setUserCourses, removeUserCourse, setCourses } from './state';
 
 const getCookie = (cname) => {
     var name = cname + "=";
@@ -59,5 +59,15 @@ export const getCourses = () => (dispatch) => {
         }).catch(error => {
             console.log(error.response);
         });
+
+export const deleteUserCourse = (id) => dispatch => {
+    let token = getCookie('token');
+    axios.defaults.headers.common['Authorization'] = "Bearer " + token;
+
+    if (token) {
+        axios.delete('/courses/' + id + '/remove/').then(({data}) => {
+            dispatch(removeUserCourse(data.data));
+        });
+    }
 }
 

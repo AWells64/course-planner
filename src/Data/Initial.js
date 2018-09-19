@@ -32,14 +32,22 @@ const Initial = {
   },
   currentUserCourses: {
     1: {
-      //
+      id: "1", 
+      title: "React JS Course for Beginners", 
+      description: "An introduction to react.", 
+      complete: false, 
+      price: "9.99", 
+      rating: 10, 
+      difficulty: "Beginners",
+      urlLink: "https://www.udemy.com/perfect-react-js-course/",  
+      score: 10,
     },
-    2: {
-      //
-    },
-    3: {
-      //
-    },
+    // 2: {
+    //   //
+    // },
+    // 3: {
+    //   //
+    // },
   }
 };
 

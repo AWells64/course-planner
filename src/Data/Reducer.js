@@ -1,6 +1,6 @@
-const deleteCourse = (state, { id }) => {
+const deleteUserCourseFromList = (state, { id }) => {
   const newState = { ...state };
-  const courses = { ...newState.courses };
+  const courses = { ...newState.currentUserCourses };
   delete courses[id];
   return {
     ...newState,
@@ -59,8 +59,8 @@ const setUserCoursesToList = (state, { courses }) => {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "deleteCourse":
-      return deleteCourse(state, action);
+    case "deleteUserCourse":
+      return deleteUserCourseFromList(state, action);
     case "completeCourse":
       return completeCourse(state, action);
     // case "addCourse" : return addCourse(state, action);
