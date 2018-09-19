@@ -39,36 +39,40 @@ class Login extends Component {
   }
 
   render() {
+    const { loggedIn } = this.props;
     return (
       <Fragment>
         <h2 style={mainHeader}>Dev Course Planner</h2>
         <hr style={hrStyle} />
-        <div style={registerBackground}>
-          <h2 style={headerText}>Sign In</h2>
-          <form onSubmit={e => this.onSubmit(e)}>
-            {this.state.fields.map((field, i) => (
-              <div style={inputSpacing} key={i}>
-                <label style={labelText}>{field.name}</label>
-                <input
-                  style={inputSize}
-                  type="text"
-                  value={field.value}
-                  onChange={e => this.onChange(e, i)}
-                />
-              </div>
-            ))}
+        { !loggedIn ?
+          <div style={registerBackground}>
+            <h2 style={headerText}>Sign In</h2>
+            <form onSubmit={e => this.onSubmit(e)}>
+              {this.state.fields.map((field, i) => (
+                <div style={inputSpacing} key={i}>
+                  <label style={labelText}>{field.name}</label>
+                  <input
+                    style={inputSize}
+                    type="text"
+                    value={field.value}
+                    onChange={e => this.onChange(e, i)}
+                  />
+                </div>
+              ))}
 
-            <input
-              type="submit"
-              style={submitButton}
-              className="btn btn-danger"
-              value="Sign in"
-            />
-          </form>
-          <p style={register}>
-            Don't have an account yet? <a href="./register">Register here.</a>
-          </p>
-        </div>
+              <input
+                type="submit"
+                style={submitButton}
+                className="btn btn-danger"
+                value="Sign in"
+              />
+            </form>
+            <p style={register}>
+              Don't have an account yet? <a href="./register">Register here.</a>
+            </p>
+          </div>
+          : <p>You're already logged in bro</p>
+        }
       </Fragment>
     );
   }
