@@ -1,6 +1,6 @@
-export const deleteCourse = id => {
+export const removeUserCourse = id => {
     return {
-      type: "deleteCourse",
+      type: "deleteUserCourse",
       id: id
     };
   };
