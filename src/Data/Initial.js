@@ -26,6 +26,17 @@ const Initial = {
       difficulty: "Difficult", 
       score: 10,
     }
+  },
+  currentUserCourses: {
+    1: {
+      //
+    },
+    2: {
+      //
+    },
+    3: {
+      //
+    },
   }
 };
 

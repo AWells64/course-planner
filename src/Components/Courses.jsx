@@ -38,7 +38,7 @@ class Courses extends Component {
                 <button className="col-xs-1.5 btn btn-primary">
                   View detail
                 </button>
-                <button className="col-xs-1.5 pull-right btn btn-success">
+                <button className="col-xs-1.5 pull-right btn btn-success" onClick={() => this.props.addCourseToUser(course.id)}>
                   <strong>+</strong> Add to list
                 </button>
               </li>
