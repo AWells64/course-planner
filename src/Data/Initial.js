@@ -4,6 +4,9 @@ const Initial = {
       id: "1", email: "name@test.com", password: "password123"
     }
   },
+
+  loggedin: false,
+
   courses: {
     1: {
       id: "1", 

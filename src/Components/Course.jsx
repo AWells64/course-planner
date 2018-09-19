@@ -2,18 +2,23 @@ import React, { Component, Fragment } from 'react';
 import DeleteCourse from './DeleteCourse';
 import CompleteCourse from './CompleteCourse'; 
 
+const font = {
+  fontFamily: 'Bitter',
+}
+
 const mainHeader = {
   fontFamily: 'Bitter',
   textAlign: "center",
-  backgroundColor: "black",
-  color: "red",
-  borderRadius: 5,
+  backgroundColor: "#181819",
+  padding: 20, 
+  color: "white",
+  borderRadius: 1,
 };
 
 const hrStyle = {
     border: 0,
     height: 0, /* Firefox... */
-    boxShadow: "0 0 10px 1px black",
+    boxShadow: "0 0 8px 1px black",
     width: '99%',
 };
 
@@ -24,15 +29,15 @@ class Course extends Component {
 
       return(
       	<Fragment>
-      	<h2 style={mainHeader}>Dev Course Planner</h2>
-			<hr style={hrStyle} />
-		<li className="list-group-item" id={course.id} >
-	        <p>Title: {course.title}</p>
-	        <p>Description: {course.description}</p>
-	        <p>Price: {course.price}</p>
-	        <p>Rating: {course.rating}</p> 
-	        <p>Difficulty: {course.difficulty}</p>
-	        <p>Link to course provider: {course.urlLink}</p>
+      	   <h2 style={mainHeader}>Dev Course Planner</h2>
+			     <hr style={hrStyle} />
+		        <li className="list-group-item" id={course.id} >
+  	        <p style={font}>Title: {course.title}</p>
+  	        <p style={font}>Description: {course.description}</p>
+  	        <p style={font}>Price: {course.price}</p>
+  	        <p style={font}>Rating: {course.rating}</p> 
+  	        <p style={font}>Difficulty: {course.difficulty}</p>
+  	        <p style={font}>Link to course provider: {course.urlLink}</p>
 	        <DeleteCourse onClick={deleteCourse} id={course.id} />
 	        <CompleteCourse onClick={completeCourse} id={course.id} complete={course.complete} /> 
       	</li>	
