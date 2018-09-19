@@ -61,6 +61,8 @@ export const getCourses = () => (dispatch) => {
         });
     }
 
+
+
 export const deleteUserCourse = (id) => dispatch => {
     let token = getCookie('token');
     axios.defaults.headers.common['Authorization'] = "Bearer " + token;
