@@ -1,41 +1,5 @@
 import React, { Component, Fragment } from "react";
 
-const headerText = {
-    color: "white",
-    marginBottom: 40,
-    textAlign: "center",
-    fontFamily: 'Bitter',
-};
-
-const labelText = {
-    color: "white",
-    marginTop: 20,
-    fontFamily: 'Bitter',
-};
-
-const registerBackground = {
-	backgroundColor: "black",
-	width: 500,
-	alignItems: "center",
-	justifyContent: "center",
-	padding: 50,
-};
-
-const inputSize = {
-	width: 400,
-};
-
-const submitButton = {
-	width: 400,
-	marginTop: 50,
-	fontFamily: 'Bitter',
-};
-
-const inputSpacing = {
-	display: "block",
-	marginVertical: 10,
-}
-
 class Register extends Component {
 	constructor(props) {
 		super(props);
@@ -61,11 +25,25 @@ class Register extends Component {
 	onSubmit(e) {
 		e.preventDefault();
 
+		let newUserData = {
+			name: "name",
+			email: this.state.fields[0].value,
+			password: this.state.fields[0].value,
+		};
+
+		this.props.registerUser(newUserData);
+
+		this.setState({
+			email: "",
+			password: "",
+		})
 	}
 	
 	render() {
 		return (
 			<Fragment>
+			<h2 style={mainHeader}>Dev Course Planner</h2>
+			<hr style={hrStyle} />
 			<div style={registerBackground}>
 				<h2 style={headerText}>Register for an account</h2>
 				<form onSubmit={(e) => this.onSubmit(e)}>
@@ -82,10 +60,68 @@ class Register extends Component {
 
 					<input type="submit" style={submitButton} className="btn btn-danger" value="Sign in"  />
 				</form>
-				</div>
+			</div>
 			</Fragment>
 		)
 	}
 }
+
+const mainHeader = {
+	fontFamily: 'Bitter',
+	textAlign: "center",
+	backgroundColor: "black",
+	color: "red",
+	borderRadius: 5,
+};
+
+const hrStyle = {
+    border: 0,
+    height: 0, /* Firefox... */
+    boxShadow: "0 0 10px 1px black",
+    width: '99%',
+};
+
+const headerText = {
+    color: "white",
+    marginBottom: 40,
+    textAlign: "center",
+    fontFamily: 'Bitter',
+};
+
+const labelText = {
+    color: "white",
+    marginTop: 20,
+    fontFamily: 'Bitter',
+};
+
+const registerBackground = {
+	backgroundColor: "black",
+	width: 500,
+	alignItems: "center",
+	justifyContent: "center",
+	padding: 50,
+	margin: "0 auto 0 auto",
+	marginBottom: 40,
+};
+
+const inputSize = {
+	width: 400,
+};
+
+const submitButton = {
+	width: 400,
+	marginTop: 50,
+	fontFamily: 'Bitter',
+};
+
+const inputSpacing = {
+	display: "block",
+	marginVertical: 10,
+};
+
+const font = {
+  fontFamily: 'Bitter',
+};
+
 
 export default Register;

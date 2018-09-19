@@ -2,17 +2,17 @@ import React from 'react';
 
 const CompleteCourse = ({onClick, id, complete}) => {
 
-	const buttonStyle = {
+	// const buttonClass = {
 		 
-		backgroundColor: complete ? "green" : "grey" 
+	// 	className: complete ? "btn btn-success" : "btn btn-secondary" 
 
-		} 
+	// 	} 
 
 	return(
 
 		<button 
-			style={buttonStyle}
-			onClick={() => onClick(id)}><strong>Complete</strong> 
+			className={complete ? "btn btn-success" : "btn btn-warning"}
+			onClick={() => onClick(id)}><strong>{complete ? "Completed" : "Mark Complete"}</strong> 
 		</button>
 
 	);
