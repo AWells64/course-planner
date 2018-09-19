@@ -25,6 +25,13 @@ export const deleteCourse = id => {
       }
   }
 
+  export const setCourses = (data) => {
+    return {
+      type: "setCourses",
+      courses: data
+    }
+  }
+
   export const setUserCourses = (data) => {
       return {
           type: "setUserCourses",

@@ -8,6 +8,25 @@ const deleteCourse = (state, { id }) => {
   };
 };
 
+const convertData = (courses) => {
+  let data = {};
+  courses.map((course, i) => {
+    data[course.id] = course;
+  })
+  return data;
+};
+
+const setCourses = (state, action) => {
+  console.log(action.courses);
+  // return state;
+  const convertedData = convertData(action.courses)
+
+  return {
+    ...state, 
+    courses: convertedData
+  }
+};
+
 const completeCourse = (state, { id }) => {
   let courses = { ...state.courses };
   courses[id].complete = true;
@@ -49,7 +68,8 @@ const reducer = (state, action) => {
       return logUserIn(state);
     case "setUserCourses":
       return setUserCoursesToList(state, action);
-
+    case "setCourses":
+      return setCourses(state, action);
     default:
       return state;
   }

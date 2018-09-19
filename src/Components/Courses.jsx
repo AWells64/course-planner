@@ -25,6 +25,11 @@ const hrStyle = {
 
 
 class Courses extends Component {
+
+  componentDidMount() {
+        this.props.onLoad()
+    }
+
   render() {
     const { courses } = this.props;
     return (

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Courses from "../Components/Courses";
-import {postCourseToUser} from '../Data/actions/api';
+import {postCourseToUser, getCourses} from '../Data/actions/api';
 
 const mapStateToProps = state => {
   return {
@@ -10,7 +10,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addCourseToUser: (id) => dispatch(postCourseToUser(id))
+    addCourseToUser: (id) => dispatch(postCourseToUser(id)),
+    onLoad: () => dispatch(getCourses()) 
   };
 };
 
