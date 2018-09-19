@@ -59,6 +59,7 @@ export const getCourses = () => (dispatch) => {
         }).catch(error => {
             console.log(error.response);
         });
+    }
 
 export const deleteUserCourse = (id) => dispatch => {
     let token = getCookie('token');
