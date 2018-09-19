@@ -23,6 +23,12 @@ const logUserIn = (state) => {
   return newState;
 }
 
+const setUserCoursesToList = (state, { courses }) => {
+  let newState = { ...state };
+  newState.currentUserCourses = courses;
+  return newState;
+}
+
 // const addCourse = (state, {id}) => {
 //   const newState = {...state}
 //   const courses = {...newState.courses};
@@ -41,6 +47,8 @@ const reducer = (state, action) => {
     // case "addCourse" : return addCourse(state, action);
     case "logIn":
       return logUserIn(state);
+    case "setUserCourses":
+      return setUserCoursesToList(state, action);
 
     default:
       return state;

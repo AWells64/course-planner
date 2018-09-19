@@ -1,5 +1,5 @@
 import axios from '../../axios';
-import { loggedIn } from './state';
+import { loggedIn, setUserCourses } from './state';
 
 const getCookie = (cname) => {
     var name = cname + "=";
@@ -48,7 +48,7 @@ export const getUserCourses = () => dispatch => {
 
     if (token) {
         axios.get('/courses/fetch').then(({data}) => {
-            console.log(data);
+            dispatch(setUserCourses(data.data));
         });
     }
 }
