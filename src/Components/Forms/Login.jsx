@@ -44,7 +44,7 @@ class Login extends Component {
       <Fragment>
         <h2 style={mainHeader}>Dev Course Planner</h2>
         <hr style={hrStyle} />
-        { !loggedIn ?
+        { loggedIn ?
           <div style={registerBackground}>
             <h2 style={headerText}>Sign In</h2>
             <form onSubmit={e => this.onSubmit(e)}>
@@ -71,7 +71,7 @@ class Login extends Component {
               Don't have an account yet? <a href="./register">Register here.</a>
             </p>
           </div>
-          : <p>You're already logged in bro</p>
+          : <p>You're already logged in bro, don't see your course? <a href="./courses/user">Click here</a></p>
         }
       </Fragment>
     );
