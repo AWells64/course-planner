@@ -58,7 +58,7 @@ class Register extends Component {
 						</div>
 					))}
 
-					<input type="submit" style={submitButton} className="btn btn-danger" value="Sign in"  />
+					<input type="submit" style={submitButton} className="btn btn-danger" value="Register"  />
 				</form>
 			</div>
 			</Fragment>
