@@ -3,6 +3,10 @@ import Course from '../Containers/Course';
 
 class UserCourses extends Component {
 
+  componentWillMount() {
+    this.props.onLoad();
+  }
+
   render() {
     const { courses, deleteCourse, completeCourse } = this.props;
       return(
