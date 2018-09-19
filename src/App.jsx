@@ -18,6 +18,7 @@ class App extends Component {
             <Route exact path="/" component={ Login } />
             <Route exact path="/register" component={ Register } />
             <Route exact path="/courses" component={ Courses } />
+            <Route exact path="/courses/user" component={ UserCourses } />
             <Route exact path="/courses/:id" render={ ({ match }) => (
                <Course
                 id={match.params.id}
