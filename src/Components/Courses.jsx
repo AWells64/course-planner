@@ -3,22 +3,26 @@ import { Link } from "react-router-dom";
 
 const font = {
   fontFamily: 'Bitter',
+  padding: 10, 
 }
 
 const mainHeader = {
   fontFamily: 'Bitter',
   textAlign: "center",
-  backgroundColor: "black",
-  color: "red",
-  borderRadius: 5,
+  backgroundColor: "#181819",
+  padding: 20,
+  color: "white",
+  borderRadius: 1,
 };
 
 const hrStyle = {
     border: 0,
     height: 0, /* Firefox... */
-    boxShadow: "0 0 10px 1px black",
+    boxShadow: "0 0 8px 1px black",
     width: '99%',
 };
+
+
 
 class Courses extends Component {
   render() {
@@ -27,7 +31,7 @@ class Courses extends Component {
       <Fragment>
       <h2 style={mainHeader}>Dev Course Planner</h2>
       <hr style={hrStyle} />
-        <h1 className="text-center" style={font}>Available Courses</h1>
+        <h1 className="text-left" style={font}>Available Courses</h1>
         {Object.values(courses).length ? (
           <ul className="list-group">
             {Object.values(courses).map((course, i) => (

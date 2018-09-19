@@ -68,15 +68,17 @@ class Login extends Component {
 const mainHeader = {
 	fontFamily: 'Bitter',
 	textAlign: "center",
-	backgroundColor: "black",
-	color: "red",
-	borderRadius: 5,
+	backgroundColor: "#181819",
+	padding: 20, 
+	color: "white",
+	borderRadius: 1,
+	marginBottom: 60, 
 };
 
 const hrStyle = {
     border: 0,
     height: 0, /* Firefox... */
-    boxShadow: "0 0 10px 1px black",
+    //boxShadow: "0 0 10px 1px black",
     width: '99%',
 };
 
@@ -94,13 +96,14 @@ const labelText = {
 };
 
 const registerBackground = {
-	backgroundColor: "black",
+	backgroundColor: "#181819",
 	width: 500,
 	alignItems: "center",
 	justifyContent: "center",
 	padding: 50,
 	margin: "0 auto 0 auto",
 	marginBottom: 40,
+	boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.75)',
 };
 
 const inputSize = {

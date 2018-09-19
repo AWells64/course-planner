@@ -9,15 +9,16 @@ const font = {
 const mainHeader = {
   fontFamily: 'Bitter',
   textAlign: "center",
-  backgroundColor: "black",
-  color: "red",
-  borderRadius: 5,
+  backgroundColor: "#181819",
+  padding: 20, 
+  color: "white",
+  borderRadius: 1,
 };
 
 const hrStyle = {
     border: 0,
     height: 0, /* Firefox... */
-    boxShadow: "0 0 10px 1px black",
+    boxShadow: "0 0 8px 1px black",
     width: '99%',
 };
 
