@@ -15,7 +15,7 @@ const getCookie = (cname) => {
         }
     }
     return "";
-}
+};
 
 export const registerUser = (newUser) => dispatch => {
     axios.post('/auth/register/', newUser).then(() => {
@@ -59,6 +59,7 @@ export const getCourses = () => (dispatch) => {
         }).catch(error => {
             console.log(error.response);
         });
+};
 
 export const deleteUserCourse = (id) => dispatch => {
     let token = getCookie('token');
@@ -66,8 +67,8 @@ export const deleteUserCourse = (id) => dispatch => {
 
     if (token) {
         axios.delete('/courses/' + id + '/remove/').then(({data}) => {
-            dispatch(removeUserCourse(data.data));
+            dispatch(removeUserCourse(id));
         });
     }
-}
+};
 

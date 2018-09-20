@@ -1,10 +1,11 @@
 const deleteUserCourseFromList = (state, { id }) => {
   const newState = { ...state };
-  const courses = { ...newState.currentUserCourses };
-  delete courses[id];
+  let updatedUserCourses = { ...newState.currentUserCourses };
+  delete updatedUserCourses[id];
+  console.log(updatedUserCourses);
   return {
     ...newState,
-    courses
+    currentUserCourses: updatedUserCourses
   };
 };
 
@@ -44,7 +45,8 @@ const logUserIn = (state) => {
 
 const setUserCoursesToList = (state, { courses }) => {
   let newState = { ...state };
-  newState.currentUserCourses = courses;
+  let newUserCourses = convertData(courses);
+  newState.currentUserCourses = newUserCourses;
   return newState;
 }
 
