@@ -1,10 +1,18 @@
 import React, { Component, Fragment } from 'react'; 
 import DeleteCourse from './DeleteCourse.jsx';
 import CompleteCourse from './CompleteCourse.jsx'; 
+import { Link } from "react-router-dom";
 
 const font = {
   fontFamily: 'Bitter',
 }
+
+const linkBackBtn = { 
+
+  marginTop: 10, 
+
+
+}; 
 
 class Course extends Component {
 
@@ -23,6 +31,13 @@ class Course extends Component {
               <DeleteCourse onClick={deleteCourse} id={course.id} />
               <CompleteCourse onClick={completeCourse} id={course.id} complete={course.complete} /> 
             </li>	
+            <Link to={"/courses"}>
+              <button 
+              className="col-xs-1.5 pull-right btn btn-secondary" 
+              style={linkBackBtn}
+              ><strong>Back</strong>
+              </button> 
+            </Link> 
       	</Fragment>	
         ) : null;
 	}
