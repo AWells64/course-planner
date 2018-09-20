@@ -12,7 +12,7 @@ const CompleteCourse = ({onClick, id, complete}) => {
 
 		<button 
 			className={complete ? "btn btn-success" : "btn btn-warning"}
-			onClick={() => onClick(id)}><strong>{complete ? "Completed" : "Mark Complete"}</strong> 
+			onClick={() => onClick(id, complete)}><strong>{complete ? "Completed" : "Mark Complete"}</strong> 
 		</button>
 
 	);
