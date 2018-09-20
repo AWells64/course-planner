@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import Header from "../Header";
 
 class Login extends Component {
 
@@ -42,8 +43,6 @@ class Login extends Component {
     const { loggedIn } = this.props;
     return (
       <Fragment>
-        <h2 style={mainHeader}>Dev Course Planner</h2>
-        <hr style={hrStyle} />
         { !loggedIn ?
           <div style={registerBackground}>
             <h2 style={headerText}>Sign In</h2>
@@ -90,12 +89,13 @@ const mainHeader = {
 	color: "white",
 	borderRadius: 1,
 	marginBottom: 40, 
+  boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.75)',
 };
 
 const hrStyle = {
     border: 0,
     height: 0, /* Firefox... */
-    //boxShadow: "0 0 10px 1px black",
+    boxShadow: "0 0 10px 1px black",
     width: '99%',
 }; 
 
@@ -120,6 +120,7 @@ const registerBackground = {
 	padding: 50,
 	margin: "0 auto 0 auto",
 	marginBottom: 40,
+  borderRadius: 1,
 	boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.75)',
 }; 
 

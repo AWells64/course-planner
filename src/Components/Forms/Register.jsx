@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import Header from "../Header";
 
 class Register extends Component {
   constructor(props) {
@@ -85,8 +86,6 @@ class Register extends Component {
   render() {
     return (
       <Fragment>
-        <h2 style={mainHeader}>Dev Course Planner</h2>
-        <hr style={hrStyle} />
         <div style={registerBackground}>
           <h2 style={headerText}>Register for an account</h2>
           <form onSubmit={e => this.onSubmit(e)}>
@@ -163,15 +162,17 @@ const labelText = {
 };
 
 const registerBackground = {
-  backgroundColor: "#181819",
-  width: 500,
-  alignItems: "center",
-  justifyContent: "center",
-  padding: 50,
-  margin: "0 auto 0 auto",
-  marginBottom: 40,
-  boxShadow: "0px 2px 10px 1px rgba(0,0,0,0.75)"
-};
+	backgroundColor: "#181819",
+	width: 500,
+	alignItems: "center",
+	justifyContent: "center",
+	padding: 50,
+	margin: "0 auto 0 auto",
+	marginBottom: 40,
+  borderRadius: 1,
+	boxShadow: '0px 2px 10px 1px rgba(0,0,0,0.75)', 
+}; 
+
 
 const inputSize = {
   width: 400

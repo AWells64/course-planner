@@ -1,28 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
-
-const font = {
-  fontFamily: 'Bitter',
-  padding: 10, 
-}
-
-const mainHeader = {
-  fontFamily: 'Bitter',
-  textAlign: "center",
-  backgroundColor: "#181819",
-  padding: 20,
-  color: "white",
-  borderRadius: 1,
-};
-
-const hrStyle = {
-    border: 0,
-    height: 0, /* Firefox... */
-    boxShadow: "0 0 8px 1px black",
-    width: '99%',
-};
-
-
+import Header from "./Header";
 
 class Courses extends Component {
 
@@ -34,9 +12,14 @@ class Courses extends Component {
     const { courses } = this.props;
     return (
       <Fragment>
-      <h2 style={mainHeader}>Dev Course Planner</h2>
-      <hr style={hrStyle} />
-        <h1 className="text-left" style={font}>Available Courses</h1>
+       <div className="row">
+       <div className="pull-left"> 
+        <h1 style={font}>Available Courses</h1>
+        </div> 
+        <div className="pull-right" style={linkBtn}> 
+        <Link to={"/courses/user"}>
+        <button className="btn btn-primary">View Your Courses</button></Link> 
+        </div></div>   
         {Object.values(courses).length ? (
           <ul className="list-group">
             {Object.values(courses).map((course, i) => (
@@ -60,9 +43,35 @@ class Courses extends Component {
         ) : (
           <p>No courses found</p>
         )}
+
       </Fragment>
     );
   }
 }
+
+const font = {
+  fontFamily: 'Bitter',
+  padding: 10, 
+}
+
+const mainHeader = {
+  fontFamily: 'Bitter',
+  textAlign: "center",
+  backgroundColor: "#181819",
+  padding: 20,
+  color: "white",
+  borderRadius: 1,
+};
+
+const hrStyle = {
+    border: 0,
+    height: 0, /* Firefox... */
+    boxShadow: "0 0 8px 1px black",
+    width: '99%',
+};
+
+const linkBtn = {
+  marginTop: 30, 
+};
 
 export default Courses;

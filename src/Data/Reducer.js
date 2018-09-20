@@ -2,7 +2,6 @@ const deleteUserCourseFromList = (state, { id }) => {
   const newState = { ...state };
   let updatedUserCourses = { ...newState.currentUserCourses };
   delete updatedUserCourses[id];
-  console.log(updatedUserCourses);
   return {
     ...newState,
     currentUserCourses: updatedUserCourses
@@ -18,7 +17,6 @@ const convertData = courses => {
 };
 
 const setCourses = (state, action) => {
-  console.log(action.courses);
   // return state;
   const convertedData = convertData(action.courses);
 
@@ -28,12 +26,12 @@ const setCourses = (state, action) => {
   };
 };
 
-const completeCourse = (state, { id }) => {
-  let courses = { ...state.courses };
-  courses[id].complete = true;
+const completeUserCourseInList = (state, { id, complete }) => {
+  let currentUserCourses = { ...state.currentUserCourses };
+  currentUserCourses[id].complete = complete;
   return {
     ...state,
-    courses
+    currentUserCourses
   };
 };
 
@@ -43,6 +41,12 @@ const logUserIn = state => {
   return newState;
 };
 
+const logUserOut = (state) => {
+  let newState = { ...state };
+  newState.loggedIn = false;
+  return newState; 
+}
+
 const setUserCoursesToList = (state, { courses }) => {
   let newState = { ...state };
   let newUserCourses = convertData(courses);
@@ -50,22 +54,15 @@ const setUserCoursesToList = (state, { courses }) => {
   return newState;
 };
 
-// const addCourse = (state, {id}) => {
-//   const newState = {...state}
-//   const courses = {...newState.courses};
-//   return {
-//     ...newState,
-//     courses
-// 	};
-// }
 
 const reducer = (state, action) => {
   switch (action.type) {
     case "deleteUserCourse":
       return deleteUserCourseFromList(state, action);
-    case "completeCourse":
-      return completeCourse(state, action);
-    // case "addCourse" : return addCourse(state, action);
+    case "completeUserCourse":
+      return completeUserCourseInList(state, action);
+    case "logOut": 
+      return logUserOut(state);
     case "logIn":
       return logUserIn(state);
     case "setUserCourses":

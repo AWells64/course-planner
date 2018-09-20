@@ -7,7 +7,7 @@ const Initial = {
     }
   },
 
-  loggedin: false,
+  loggedIn: false,
 
   courses: {
     1: {
