@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'; 
 import DeleteCourse from './DeleteCourse.jsx';
-import CompleteCourse from './CompleteCourse.jsx'; 
+import CompleteCourse from './CompleteCourse.jsx';
+import Header from "./Header"; 
 
 const font = {
   fontFamily: 'Bitter',
@@ -13,6 +14,7 @@ class Course extends Component {
 
       return course ?(
       	<Fragment>
+          <Header />
 		        <li className="list-group-item" id={course.id} >
                 <p style={font}>Title: {course.title}</p>
                 <p style={font}>Description: {course.description}</p>
