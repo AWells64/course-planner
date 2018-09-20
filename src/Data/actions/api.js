@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 import axios from "../../axios";
 import {
   loggedIn,
   setUserCourses,
   removeUserCourse,
-  setCourses
+  setCourses,
+  completeUserCourse
 } from "./state";
-=======
-import axios from '../../axios';
-import { loggedIn, setUserCourses, removeUserCourse, setCourses, completeUserCourse } from './state';
->>>>>>> d1394c9f1e09389ab4a0704a2bd08ea7095cc0b9
 
 const getCookie = cname => {
   var name = cname + "=";
@@ -84,20 +80,18 @@ export const deleteUserCourse = id => dispatch => {
     });
   }
 };
-<<<<<<< HEAD
-=======
 
 export const patchUserCourse = (id, complete) => dispatch => {
-    let token = getCookie('token');
-    axios.defaults.headers.common['Authorization'] = "Bearer " + token;
+  let token = getCookie("token");
+  axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
-    let requestData = { complete: !complete };
+  let requestData = { complete: !complete };
 
-    if (token) {
-        axios.patch('/courses/' + id + '/complete/', requestData).then(({data}) => {
-            dispatch(completeUserCourse(id, !complete));
-        });
-    }
+  if (token) {
+    axios
+      .patch("/courses/" + id + "/complete/", requestData)
+      .then(({ data }) => {
+        dispatch(completeUserCourse(id, !complete));
+      });
+  }
 };
-
->>>>>>> d1394c9f1e09389ab4a0704a2bd08ea7095cc0b9
