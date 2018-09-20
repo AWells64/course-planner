@@ -1,5 +1,5 @@
 import axios from '../../axios';
-import { loggedIn, setUserCourses, removeUserCourse, setCourses } from './state';
+import { loggedIn, setUserCourses, removeUserCourse, setCourses, completeUserCourse } from './state';
 
 const getCookie = (cname) => {
     var name = cname + "=";
@@ -69,6 +69,19 @@ export const deleteUserCourse = (id) => dispatch => {
     if (token) {
         axios.delete('/courses/' + id + '/remove/').then(({data}) => {
             dispatch(removeUserCourse(id));
+        });
+    }
+};
+
+export const patchUserCourse = (id, complete) => dispatch => {
+    let token = getCookie('token');
+    axios.defaults.headers.common['Authorization'] = "Bearer " + token;
+
+    let requestData = { complete: !complete };
+
+    if (token) {
+        axios.patch('/courses/' + id + '/complete/', requestData).then(({data}) => {
+            dispatch(completeUserCourse(id, !complete));
         });
     }
 };
