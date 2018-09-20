@@ -28,7 +28,6 @@ class UserCourses extends Component {
     const { courses, deleteCourse, completeCourse } = this.props;
       return(
 		<Fragment>
-      <Header />
 			{Object.values(courses).length ? (
         <ul className="list-group">
 		        {Object.values(courses).map((course, i) => (

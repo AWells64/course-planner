@@ -9,6 +9,7 @@ import Login from "./Containers/Login";
 import Register from "./Containers/Register";
 import PasswordReset from "./Components/Forms/PasswordReset";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./Containers/HeaderContainer";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
       <Router>
         <Provider store={store}>
           <Fragment>
+            <Header />
             <Route exact path="/" component={ Login } />
             <Route exact path="/register" component={ Register } />
             <Route exact path="/reset" component={ PasswordReset } />

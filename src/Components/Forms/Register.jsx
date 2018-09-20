@@ -42,7 +42,6 @@ class Register extends Component {
   render() {
     return (
       <Fragment>
-        <Header />
         <div style={registerBackground}>
           <h2 style={headerText}>Register for an account</h2>
           <form onSubmit={e => this.onSubmit(e)}>

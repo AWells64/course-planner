@@ -41,6 +41,12 @@ const logUserIn = (state) => {
   return newState;
 }
 
+const logUserOut = (state) => {
+  let newState = { ...state };
+  newState.loggedIn = false;
+  return newState; 
+}
+
 const setUserCoursesToList = (state, { courses }) => {
   let newState = { ...state };
   let newUserCourses = convertData(courses);
@@ -48,14 +54,6 @@ const setUserCoursesToList = (state, { courses }) => {
   return newState;
 }
 
-// const addCourse = (state, {id}) => {
-//   const newState = {...state}
-//   const courses = {...newState.courses};
-//   return {
-//     ...newState,
-//     courses
-// 	};
-// }
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -63,7 +61,8 @@ const reducer = (state, action) => {
       return deleteUserCourseFromList(state, action);
     case "completeUserCourse":
       return completeUserCourseInList(state, action);
-    // case "addCourse" : return addCourse(state, action);
+    case "logOut": 
+      return logUserOut(state);
     case "logIn":
       return logUserIn(state);
     case "setUserCourses":

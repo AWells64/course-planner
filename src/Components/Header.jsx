@@ -8,12 +8,12 @@ class Header extends Component {
   //   }
 
   render() {
-    const { header } = this.props;
+    const { header, loggedIn, logOut } = this.props;
     return (
       <Fragment>
         <div style={headerDiv}>
           <h2 style={mainHeader}>Dev Course Planner</h2>
-          <button style={LogoutButton} className="btn btn-danger btn-sm">Logout</button>
+          <button onClick={logOut} style={LogoutButton} className="btn btn-danger btn-sm">Logout</button>
         </div>
         <hr style={hrStyle} />
       </Fragment>

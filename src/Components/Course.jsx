@@ -10,7 +10,7 @@ const font = {
 class Course extends Component {
 
   render() {
-    const { course, deleteCourse, completeCourse, completed } = this.props;
+    const { course, deleteCourse, completeCourse, completed, loggedIn } = this.props;
 
       return course ?(
       	<Fragment>

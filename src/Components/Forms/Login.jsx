@@ -43,7 +43,6 @@ class Login extends Component {
     const { loggedIn } = this.props;
     return (
       <Fragment>
-        <Header />
         { !loggedIn ?
           <div style={registerBackground}>
             <h2 style={headerText}>Sign In</h2>
