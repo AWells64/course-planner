@@ -9,23 +9,23 @@ const deleteUserCourseFromList = (state, { id }) => {
   };
 };
 
-const convertData = (courses) => {
+const convertData = courses => {
   let data = {};
   courses.map((course, i) => {
     data[course.id] = course;
-  })
+  });
   return data;
 };
 
 const setCourses = (state, action) => {
   console.log(action.courses);
   // return state;
-  const convertedData = convertData(action.courses)
+  const convertedData = convertData(action.courses);
 
   return {
-    ...state, 
+    ...state,
     courses: convertedData
-  }
+  };
 };
 
 const completeCourse = (state, { id }) => {
@@ -37,18 +37,18 @@ const completeCourse = (state, { id }) => {
   };
 };
 
-const logUserIn = (state) => {
+const logUserIn = state => {
   let newState = { ...state };
   newState.loggedIn = true;
   return newState;
-}
+};
 
 const setUserCoursesToList = (state, { courses }) => {
   let newState = { ...state };
   let newUserCourses = convertData(courses);
   newState.currentUserCourses = newUserCourses;
   return newState;
-}
+};
 
 // const addCourse = (state, {id}) => {
 //   const newState = {...state}

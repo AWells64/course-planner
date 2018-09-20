@@ -8,8 +8,8 @@ class Login extends Component {
       fields: [
         // {name: "id", value: ""},
         // {name: "Name", value: ""},
-        { name: "Email:", value: "" },
-        { name: "Password:", value: "" }
+        { name: "Email:", value: "", type: "text" },
+        { name: "Password:", value: "", type: "password" }
       ]
     };
     this.onChange = this.onChange.bind(this);
@@ -53,7 +53,7 @@ class Login extends Component {
                   <label style={labelText}>{field.name}</label>
                   <input
                     style={inputSize}
-                    type="text"
+                    type={field.type}
                     value={field.value}
                     onChange={e => this.onChange(e, i)}
                   />
