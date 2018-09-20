@@ -2,32 +2,6 @@ import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 
-
-const font = {
-  fontFamily: 'Bitter',
-  padding: 10, 
-}
-
-const mainHeader = {
-  fontFamily: 'Bitter',
-  textAlign: "center",
-  backgroundColor: "#181819",
-  padding: 20,
-  color: "white",
-  borderRadius: 1,
-};
-
-const hrStyle = {
-    border: 0,
-    height: 0, /* Firefox... */
-    boxShadow: "0 0 8px 1px black",
-    width: '99%',
-};
-
-const linkBtn = {
-  marginTop: 30, 
-};
-
 class Courses extends Component {
 
   componentDidMount() {
