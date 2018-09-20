@@ -5,10 +5,11 @@ export const removeUserCourse = id => {
     };
   };
   
-  export const completeCourse = id => {
+  export const completeUserCourse = (id, complete) => {
     return {
-      type: "completeCourse",
-      id: id
+      type: "completeUserCourse",
+      id: id,
+      complete: complete
     };
   };
   

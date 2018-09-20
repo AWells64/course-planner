@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 const font = {
   fontFamily: 'Bitter',
@@ -69,6 +70,7 @@ class Courses extends Component {
         ) : (
           <p>No courses found</p>
         )}
+
       </Fragment>
     );
   }
