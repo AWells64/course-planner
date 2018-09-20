@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'; 
-import UserCourse from '../Containers/UserCourse'; 
+import UserCourse from '../Containers/UserCourse';
+import Header from './Header'; 
 
 const mainHeader = {
   fontFamily: 'Bitter',
@@ -27,6 +28,7 @@ class UserCourses extends Component {
     const { courses, deleteCourse, completeCourse } = this.props;
       return(
 		<Fragment>
+      <Header />
 			{Object.values(courses).length ? (
         <ul className="list-group">
 		        {Object.values(courses).map((course, i) => (

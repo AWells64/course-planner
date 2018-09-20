@@ -14,7 +14,6 @@ class Course extends Component {
 
       return course ?(
       	<Fragment>
-          <Header />
 		        <li className="list-group-item" id={course.id} >
                 <p style={font}>Title: {course.title}</p>
                 <p style={font}>Description: {course.description}</p>
