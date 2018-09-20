@@ -22,11 +22,9 @@ const hrStyle = {
     width: '99%',
 };
 
-const linkPageButton = {
-  float: "right", 
-}; 
-
-
+const linkBtn = {
+  marginTop: 30, 
+};
 
 class Courses extends Component {
 
@@ -40,9 +38,14 @@ class Courses extends Component {
       <Fragment>
       <h2 style={mainHeader}>Dev Course Planner</h2>
       <hr style={hrStyle} />
-        <h1 className="text-left" style={font}>Available Courses</h1>
+       <div className="row">
+       <div className="pull-left"> 
+        <h1 style={font}>Available Courses</h1>
+        </div> 
+        <div className="pull-right" style={linkBtn}> 
         <Link to={"/courses/user"}>
         <button className="btn btn-primary">View Your Courses</button></Link> 
+        </div></div>   
         {Object.values(courses).length ? (
           <ul className="list-group">
             {Object.values(courses).map((course, i) => (

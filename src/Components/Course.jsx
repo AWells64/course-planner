@@ -9,9 +9,9 @@ const font = {
 
 const linkBackBtn = { 
 
-  marginTop: 10, 
-
-
+  marginTop: 10,
+  marginRight: 20,
+  color: 'black', 
 }; 
 
 class Course extends Component {
