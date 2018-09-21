@@ -33,7 +33,7 @@ class Courses extends Component {
                 </p>
                 <Link to={"/courses/" + course.id}>
                   <button className="col-xs-1.5 btn btn-primary" style={font}>
-                    View detail
+                    View details
                   </button>
                 </Link>
                 <button className="col-xs-1.5 pull-right btn btn-success" style={font} onClick={() => this.props.addCourseToUser(course.id)}>

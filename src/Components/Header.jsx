@@ -14,7 +14,9 @@ class Header extends Component {
         <div style={headerDiv}>
           <h2 style={mainHeader}>Dev Course Planner</h2>
           { loggedIn ?
+            <Link to={"/"}>
             <button onClick={logOut} style={LogoutButton} className="btn btn-danger btn-sm">Logout</button>
+            </Link>
             : null
           } 
         </div>
