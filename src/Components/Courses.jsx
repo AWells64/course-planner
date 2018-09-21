@@ -32,9 +32,9 @@ class Courses extends Component {
                   <strong>Description:</strong> {course.description}
                 </p>
                 <Link to={"/courses/" + course.id}>
-                <button className="col-xs-1.5 btn btn-primary" style={font}>
-                  View detail
-                </button>
+                  <button className="col-xs-1.5 btn btn-primary" style={font}>
+                    View detail
+                  </button>
                 </Link>
                 <button className="col-xs-1.5 pull-right btn btn-success" style={font} onClick={() => this.props.addCourseToUser(course.id)}>
                   <strong>+</strong> Add to list

@@ -22,7 +22,7 @@ class Course extends Component {
   }
 
   render() {
-    const { course, deleteCourse, completeCourse, completed, loggedIn } = this.props;
+    const { course, deleteCourse, completeCourse, completed, loggedIn, buttonDisplay } = this.props;
 
       return course ? (
       	<Fragment>
@@ -33,8 +33,14 @@ class Course extends Component {
                 <p style={font}>Rating: {course.rating}</p> 
                 <p style={font}>Difficulty: {course.difficulty}</p>
                 <p style={font}>Link to course provider: {course.urlLink}</p>
-              <DeleteCourse onClick={deleteCourse} id={course.id} />
-              <CompleteCourse onClick={completeCourse} id={course.id} complete={course.complete} /> 
+              {
+                buttonDisplay ? (
+                  <Fragment>
+                    <DeleteCourse onClick={deleteCourse} id={course.id} />
+                    <CompleteCourse onClick={completeCourse} id={course.id} complete={course.complete} />
+                  </Fragment>
+                ) : null
+              }
             </li>	
             <Link to={"/courses"}>
               <button 

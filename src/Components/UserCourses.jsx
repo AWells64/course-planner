@@ -34,7 +34,7 @@ class UserCourses extends Component {
                   <ul className="list-group">
     		            {
                       Object.values(courses).map((course, i) => (
-    		                <UserCourse key={course.id} id={course.id} course={course} />
+    		                <UserCourse key={course.id} id={course.id} course={course} buttonDisplay={true} />
                       ))
                     }
                   </ul> ) : ( <p>No courses found</p> )

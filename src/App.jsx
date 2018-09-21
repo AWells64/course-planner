@@ -26,6 +26,7 @@ class App extends Component {
             <Route exact path="/courses/:id" render={ ({ match }) => (
                <Course
                 id={match.params.id}
+                buttonDisplay={false}
                />
              )} />
           </Fragment>
