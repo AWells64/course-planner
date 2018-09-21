@@ -17,6 +17,10 @@ const linkBackBtn = {
 
 class Course extends Component {
 
+  componentDidMount() {
+    this.props.onLoad()
+  }
+
   render() {
     const { course, deleteCourse, completeCourse, completed, loggedIn } = this.props;
 

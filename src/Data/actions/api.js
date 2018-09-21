@@ -4,7 +4,8 @@ import {
   setUserCourses,
   removeUserCourse,
   setCourses,
-  completeUserCourse
+  completeUserCourse,
+  setCourse
 } from "./state";
 
 const getCookie = cname => {
@@ -64,6 +65,18 @@ export const getCourses = () => dispatch => {
     .get("/courses")
     .then(response => {
       dispatch(setCourses(response.data.data));
+    })
+    .catch(error => {
+      console.log(error.response);
+    });
+};
+
+export const getCourse = (id) => dispatch => {
+  axios
+    .get("/courses/" + id)
+    .then(response => {
+      console.log(response.data.data)
+      dispatch(setCourse(response.data.data));
     })
     .catch(error => {
       console.log(error.response);

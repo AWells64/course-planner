@@ -5,6 +5,7 @@ import { getUserCourses } from "../Data/actions/api";
 const mapStateToProps = (state) => {
 	return {
 		courses: Object.values(state.currentUserCourses),
+		loggedIn: state.loggedIn,
 	}
 
 }; 

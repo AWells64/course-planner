@@ -13,7 +13,10 @@ class Header extends Component {
       <Fragment>
         <div style={headerDiv}>
           <h2 style={mainHeader}>Dev Course Planner</h2>
-          <button onClick={logOut} style={LogoutButton} className="btn btn-danger btn-sm">Logout</button>
+          { loggedIn ?
+            <button onClick={logOut} style={LogoutButton} className="btn btn-danger btn-sm">Logout</button>
+            : null
+          } 
         </div>
         <hr style={hrStyle} />
       </Fragment>

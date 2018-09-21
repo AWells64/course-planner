@@ -1,15 +1,23 @@
 import { connect } from "react-redux";
-import Courses from "../Components/Course"; 
+import Course from "../Components/Course"; 
+import { getCourse } from "../Data/actions/api";
 
 
 const mapStateToProps = (state, {id}) => {
 	const coursesArr = Object.values(state.courses);
 	return {
-		course: coursesArr.find(course => course.id === id),
+		course: state.courses[id],
 		courses: coursesArr,
-		completed: coursesArr.find(course => course.id === id) ? coursesArr.find(course => course.id === id).complete : null,
+		completed: state.courses[id] ? state.courses[id].completed : null,
+		// completed: coursesArr.find(course => course.id === id) ? coursesArr.find(course => course.id === id).complete : null,
 	}
 
 }; 
 
-export default connect(mapStateToProps)(Courses);
+const mapDispatchToProps = (dispatch, {id}) => {
+	return {
+		onLoad: () => dispatch(getCourse(id))
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Course);

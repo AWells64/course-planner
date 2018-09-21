@@ -26,6 +26,17 @@ const setCourses = (state, action) => {
   };
 };
 
+const setCourse = (state, { course }) => {
+  // return state;
+  return {
+    ...state,
+    courses: {
+      ...state.courses,
+      [course.id]: course
+    }
+  };
+};
+
 const completeUserCourseInList = (state, { id, complete }) => {
   let currentUserCourses = { ...state.currentUserCourses };
   currentUserCourses[id].complete = complete;
@@ -69,6 +80,8 @@ const reducer = (state, action) => {
       return setUserCoursesToList(state, action);
     case "setCourses":
       return setCourses(state, action);
+    case "setCourse" :
+      return setCourse(state, action);
     default:
       return state;
   }

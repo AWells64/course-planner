@@ -14,7 +14,7 @@ class Courses extends Component {
       <Fragment>
        <div className="row">
        <div className="pull-left"> 
-        <h1 style={font}>Available Courses</h1>
+          <h1 style={font}>Available Courses</h1>
         </div> 
         <div className="pull-right" style={linkBtn}> 
         <Link to={"/courses/user"}>
@@ -31,9 +31,11 @@ class Courses extends Component {
                 <p className="col-xs-5" style={font}>
                   <strong>Description:</strong> {course.description}
                 </p>
+                <Link to={"/courses/" + course.id}>
                 <button className="col-xs-1.5 btn btn-primary" style={font}>
                   View detail
                 </button>
+                </Link>
                 <button className="col-xs-1.5 pull-right btn btn-success" style={font} onClick={() => this.props.addCourseToUser(course.id)}>
                   <strong>+</strong> Add to list
                 </button>

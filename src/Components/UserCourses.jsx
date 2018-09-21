@@ -20,24 +20,26 @@ const hrStyle = {
 
 class UserCourses extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.onLoad();
   }
 
   render() {
-    const { courses, deleteCourse, completeCourse } = this.props;
-      return(
-		<Fragment>
-			{Object.values(courses).length ? (
-        <ul className="list-group">
-		        {Object.values(courses).map((course, i) => (
-		          <UserCourse key={course.id} id={course.id} course={course} />
-            ))}
-        </ul>
-      ) : (
-        <p>No courses found</p>
-      )}
-			</Fragment> 
+    const { courses, deleteCourse, completeCourse, loggedIn } = this.props;
+      return( 
+    		<Fragment>
+          { 
+            
+    			     Object.values(courses).length ? (
+                  <ul className="list-group">
+    		            {
+                      Object.values(courses).map((course, i) => (
+    		                <UserCourse key={course.id} id={course.id} course={course} />
+                      ))
+                    }
+                  </ul> ) : ( <p>No courses found</p> )
+          }
+        </Fragment>
 		);
 	}
 }

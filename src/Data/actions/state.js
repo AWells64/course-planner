@@ -1,5 +1,4 @@
 export const logOutUser = () => {
-    document.cookie = "token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
     return {
       type: "logOut",
     }
@@ -37,6 +36,13 @@ export const removeUserCourse = id => {
     return {
       type: "setCourses",
       courses: data
+    }
+  }
+
+  export const setCourse = (data) => {
+    return {
+      type: "setCourse",
+      course: data
     }
   }
 
