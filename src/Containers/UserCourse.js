@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import Course from "../Components/Course"; 
-import { deleteUserCourse, patchUserCourse } from '../Data/actions/api';  
-
+import { deleteUserCourse, patchUserCourse, getCourse } from '../Data/actions/api';  
 
 const mapStateToProps = (state, {id}) => {
 	const coursesArr = Object.values(state.currentUserCourses);
@@ -13,8 +12,9 @@ const mapStateToProps = (state, {id}) => {
 
 }; 
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, {id}) => {
 	return {
+		onLoad: () => dispatch(getCourse(id)),
 		deleteCourse: ( id ) => dispatch(deleteUserCourse(id)),
 		completeCourse: ( id, complete ) => dispatch(patchUserCourse(id, complete))
 	};

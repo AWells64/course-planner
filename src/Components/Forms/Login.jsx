@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 import Header from "../Header";
 
 class Login extends Component {
@@ -58,22 +59,23 @@ class Login extends Component {
                   />
                 </div>
               ))}
-
+              
               <input
                 type="submit"
                 style={submitButton}
                 className="btn btn-danger"
                 value="Sign in"
               />
+
             </form>
             <p style={register}>
-              Have you forgotten your password again!? Ok click here to <a href="./courses/user">reset</a>
+              Have you forgotten your password again!? Ok click here to <Link to={"./courses/user"}>reset</Link>
             </p>
             <p style={register}>
-              Don't have an account yet? <a href="./register">Register here.</a>
+              Don't have an account yet? <Link to={"./register"}>Register here.</Link>
             </p>
           </div>
-          : <p>You're already logged in bro, don't see your course? <a href="./courses/user">Click here</a></p>
+          : <p>You're already logged in bro, don't see your course? <Link to={"./courses/user"}>Click here</Link></p>
         }
       </Fragment>
     );
