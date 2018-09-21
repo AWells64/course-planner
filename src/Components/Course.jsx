@@ -20,7 +20,7 @@ class Course extends Component {
   render() {
     const { course, deleteCourse, completeCourse, completed, loggedIn } = this.props;
 
-      return course ?(
+      return course ? (
       	<Fragment>
 		        <li className="list-group-item" id={course.id} >
                 <p style={font}>Title: {course.title}</p>
